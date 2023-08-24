@@ -19,16 +19,27 @@
             <RowDefinition Height="0.5*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Label x:Name="addUserTitle"
-               Grid.Column="0"
-               Grid.Row="0"
-               Grid.ColumnSpan="3"
-               VerticalContentAlignment="Center"
-               Content="Game center" 
-               HorizontalContentAlignment="Center" 
-               Background="AliceBlue"
-               FontWeight="Bold"
-               FontSize="60"
+        <Label 
+            x:Name="MainTtile"
+            Grid.Column="0"
+            Grid.Row="0"
+            Grid.ColumnSpan="3"
+            VerticalContentAlignment="Center"
+            Content="Game center" 
+            HorizontalContentAlignment="Center" 
+            Background="AliceBlue"
+            FontWeight="Bold"
+            FontSize="60"
+        />
+
+        <Label 
+            x:Name="DateLabel"
+            Grid.Column="1"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Stretch"
+            FontSize="20"
         />
 
         <Label 
@@ -39,6 +50,16 @@
             VerticalAlignment="Center" 
             HorizontalAlignment="Center"
             FontSize="26"
+        />
+
+        <Label
+            x:Name="UserLabel"
+            Grid.Column="0"
+            Grid.Row="0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Content="Please Log In"
+            FontSize="20"
         />
 
         <WrapPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
