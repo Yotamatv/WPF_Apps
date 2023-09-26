@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <Label 
-        x:Name="Project1Title"
+        x:Name="ProjectTitle"
         Grid.Column="0"
         Grid.Row="0"
         Grid.ColumnSpan="3"

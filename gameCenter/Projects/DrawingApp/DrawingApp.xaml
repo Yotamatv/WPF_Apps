@@ -1,0 +1,45 @@
+﻿<Window x:Class="gameCenter.Projects.DrawingApp.DrawingApp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gameCenter.Projects.DrawingApp"
+        mc:Ignorable="d"
+        Title="DrawingApp" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20" Background="{TemplateBinding Background}" Height="35" Width="55">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Canvas Name="drawingCanvas" Background="White" MouseLeftButtonDown="StartDrawing" MouseMove="Draw" MouseLeftButtonUp="StopDrawing" />
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button Background="AliceBlue" Content="Pen" Click="SelectPenTool" Style="{StaticResource ButtonStyle}"/>
+            <Button Background="AliceBlue" Content="Brush" Click="SelectBrushTool" Style="{StaticResource ButtonStyle}" />
+            <Button Background="AliceBlue" Content="Eraser" Click="SelectEraserTool" Style="{StaticResource ButtonStyle}"/>
+            <Button Background="AliceBlue" Content="Color" Click="SelectColor" Style="{StaticResource ButtonStyle}"/>
+            <Button Background="AliceBlue" Content="Clear" Click="ClearScreen" Style="{StaticResource ButtonStyle}"/>
+            <Button Background="AliceBlue" Content="+" Click="ChangeSize" Style="{StaticResource ButtonStyle}"/>
+            <Button Background="AliceBlue" Content="-" Click="ChangeSize" Style="{StaticResource ButtonStyle}"/>
+            <TextBox Name="Size" FontSize="14" BorderThickness="0"></TextBox>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top" Name="colorPanel" Visibility="Collapsed">
+                <Button Height="45" Width="45" Background="Blue" Name="Blue" Click="ChangeColor" />
+                <Button Height="45" Width="45" Background="Black" Name="Black" Click="ChangeColor" />
+                <Button Height="45" Width="45" Background="Red" Name="Red" Click="ChangeColor" />
+                <Button Height="45" Width="45" Background="Green" Name="Green" Click="ChangeColor" />
+                <Button Height="45" Width="45" Background="Yellow" Name="Yellow" Click="ChangeColor" />
+                <Button Height="45" Width="45" Background="Orange" Name="Orange" Click="ChangeColor" />
+                <Button Height="45" Width="45" Background="Purple" Name="Purple" Click="ChangeColor" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+   
+</Window>

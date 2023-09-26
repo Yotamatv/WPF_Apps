@@ -5,16 +5,67 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <UserSecretsId>a9609eca-4d42-4de3-b489-535b64f55932</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\square1.jpeg" />
-    <None Remove="Images\square2.png" />
+    <None Remove="Images\BackgroudVideo.mp4" />
+    <None Remove="Images\Background.png" />
+    <None Remove="Images\BlackjackLogo.png" />
+    <None Remove="Images\CarGameLogo.png" />
+    <None Remove="Images\CurrencyLogo.png" />
+    <None Remove="Images\PaintLogo.png" />
+    <None Remove="Images\TicTacToeLogo.png" />
+    <None Remove="Images\UsersLogo.png" />
+    <None Remove="Projects\BlackJack\Images\10.png" />
+    <None Remove="Projects\BlackJack\Images\2.png" />
+    <None Remove="Projects\BlackJack\Images\3.png" />
+    <None Remove="Projects\BlackJack\Images\4.png" />
+    <None Remove="Projects\BlackJack\Images\5.png" />
+    <None Remove="Projects\BlackJack\Images\6.png" />
+    <None Remove="Projects\BlackJack\Images\7.png" />
+    <None Remove="Projects\BlackJack\Images\8.png" />
+    <None Remove="Projects\BlackJack\Images\9.png" />
+    <None Remove="Projects\BlackJack\Images\Ace.png" />
+    <None Remove="Projects\BlackJack\Images\Background.jpg" />
+    <None Remove="Projects\BlackJack\Images\ButtonImage.jpg" />
+    <None Remove="Projects\BlackJack\Images\Jack.png" />
+    <None Remove="Projects\BlackJack\Images\King.png" />
+    <None Remove="Projects\BlackJack\Images\Queen.png" />
+    <None Remove="Projects\CarGame\Images\BackgroudVideo.mp4" />
+    <None Remove="Projects\CarGame\Images\Bomb.png" />
+    <None Remove="Projects\CarGame\Images\carImage.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\square1.jpeg" />
-    <Resource Include="Images\square2.png" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Background.png" />
+    <Resource Include="Images\BlackjackLogo.png" />
+    <Resource Include="Images\CarGameLogo.png" />
+    <Resource Include="Images\CurrencyLogo.png" />
+    <Resource Include="Images\PaintLogo.png" />
+    <Resource Include="Images\TicTacToeLogo.png" />
+    <Resource Include="Images\UsersLogo.png" />
+    <Resource Include="Projects\BlackJack\Images\10.png" />
+    <Resource Include="Projects\BlackJack\Images\2.png" />
+    <Resource Include="Projects\BlackJack\Images\3.png" />
+    <Resource Include="Projects\BlackJack\Images\4.png" />
+    <Resource Include="Projects\BlackJack\Images\5.png" />
+    <Resource Include="Projects\BlackJack\Images\6.png" />
+    <Resource Include="Projects\BlackJack\Images\7.png" />
+    <Resource Include="Projects\BlackJack\Images\8.png" />
+    <Resource Include="Projects\BlackJack\Images\9.png" />
+    <Resource Include="Projects\BlackJack\Images\Ace.png" />
+    <Resource Include="Projects\BlackJack\Images\Background.jpg" />
+    <Resource Include="Projects\BlackJack\Images\ButtonImage.jpg" />
+    <Resource Include="Projects\BlackJack\Images\Jack.png" />
+    <Resource Include="Projects\BlackJack\Images\King.png" />
+    <Resource Include="Projects\BlackJack\Images\Queen.png" />
+    <Resource Include="Projects\CarGame\Images\Bomb.png" />
+    <Resource Include="Projects\CarGame\Images\carImage.png" />
   </ItemGroup>
 
 </Project>

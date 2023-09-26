@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gameCenter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1400">
+        Title="MainWindow" Height="800" Width="1400" Closing="Window_Closing">
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -27,7 +28,8 @@
             VerticalContentAlignment="Center"
             Content="Game center" 
             HorizontalContentAlignment="Center" 
-            Background="AliceBlue"
+            Background="DarkRed"
+            
             FontWeight="Bold"
             FontSize="60"
         />
@@ -42,6 +44,7 @@
             FontSize="20"
         />
 
+        <Image Source="/Images/Background.png" Stretch="UniformToFill" Grid.Column="0" Grid.Row="1"  Grid.ColumnSpan="3"  Grid.RowSpan="3"/>
         <Label 
             x:Name="GameText"
             Content="please pick a game" 
@@ -50,36 +53,28 @@
             VerticalAlignment="Center" 
             HorizontalAlignment="Center"
             FontSize="26"
+            Foreground="WhiteSmoke"
         />
 
-        <Label
-            x:Name="UserLabel"
-            Grid.Column="0"
-            Grid.Row="0"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Content="Please Log In"
-            FontSize="20"
-        />
-
-        <WrapPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Image x:Name="Image1" Source="/Images/square1.jpeg" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image1_MouseLeftButtonUp"/>
-            <Image x:Name="Image2" Source="/Images/square2.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
-            <Image x:Name="Image3" Source="/Images/square1.jpeg" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
-            <Image x:Name="Image4" Source="/Images/square2.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
-            <Image x:Name="Image5" Source="/Images/square1.jpeg" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
-            <Image x:Name="Image6" Source="/Images/square2.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+        
+        <WrapPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="DarkRed">
+            <Image x:Name="Image1" Source="/Images/UsersLogo.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image1_MouseLeftButtonUp"/>
+            <Image x:Name="Image2" Source="/Images/TicTacToeLogo.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image2_MouseLeftButtonUp"/>
+            <Image x:Name="Image3" Source="/Images/CurrencyLogo.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image3_MouseLeftButtonUp"/>
+            <Image x:Name="Image4" Source="/Images/CarGameLogo.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image4_MouseLeftButtonUp"/>
+            <Image x:Name="Image5" Source="/Images/PaintLogo.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image5_MouseLeftButtonUp"/>
+            <Image x:Name="Image6" Source="/Images/BlackjackLogo.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonDown="Image6_MouseLeftButtonDown"/>
         </WrapPanel>
-
         <Label x:Name="Footer"
                Grid.Column="0"
                Grid.Row="3"
                Grid.ColumnSpan="3"
                VerticalContentAlignment="Center"
                HorizontalContentAlignment="Center" 
-               Background="AliceBlue"
+               Background="DarkRed"
                FontWeight="Bold"
                FontSize="23"
         />
     </Grid>
+    
 </Window>

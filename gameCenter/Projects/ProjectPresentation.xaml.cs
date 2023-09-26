@@ -28,11 +28,12 @@ namespace gameCenter.Projects
 
         }
 
-        public void OnStartUp(string projectInfo, ImageSource imageSource, Window project)
+        public void OnStartUp(string projectInfo, ImageSource imageSource, Window project, string projectName)
         {
             InfoTextBox.Text = projectInfo;
             ProjectImage.Source = imageSource;
             Project = project;
+            ProjectTitle.Content = projectName;
         }
 
         private void Tick(object sender, EventArgs e)
@@ -45,7 +46,7 @@ namespace gameCenter.Projects
         {
             Hide();
             Project.ShowDialog();
-            ShowDialog();
+            //ShowDialog();
             Project.Close();
         }
 
