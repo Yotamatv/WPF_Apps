@@ -5,6 +5,7 @@ using gameCenter.Projects.CurrencyConvertorView;
 using gameCenter.Projects.DrawingApp;
 using gameCenter.Projects.Project1;
 using gameCenter.Projects.TicTacToe;
+using gameCenter.Projects.ToDoList;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -48,6 +49,7 @@ namespace gameCenter
                 "Image4" => "Car Game",
                 "Image5" => "Paint",
                 "Image6" => "BlackJack",
+                "Image7" => "To Do List",
                 _ => "please pick an app"
             };
         }
@@ -123,6 +125,17 @@ namespace gameCenter
             ProjectPresentation page = new();
             BlackjackGame project = new();
             page.OnStartUp("bla bla bla", Image6.Source, project, "BlackJack");
+            Hide();
+            page.ShowDialog();
+            ShowDialog();
+            project.Close();
+        }
+
+        private void Image7_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            ProjectPresentation page = new();
+            ToDoList project = new();
+            page.OnStartUp("bla bla bla", Image7.Source, project, "To Do List");
             Hide();
             page.ShowDialog();
             ShowDialog();

@@ -16,6 +16,7 @@
     <None Remove="Images\CurrencyLogo.png" />
     <None Remove="Images\PaintLogo.png" />
     <None Remove="Images\TicTacToeLogo.png" />
+    <None Remove="Images\ToDoListLogo.png" />
     <None Remove="Images\UsersLogo.png" />
     <None Remove="Projects\BlackJack\Images\10.png" />
     <None Remove="Projects\BlackJack\Images\2.png" />
@@ -48,6 +49,7 @@
     <Resource Include="Images\CurrencyLogo.png" />
     <Resource Include="Images\PaintLogo.png" />
     <Resource Include="Images\TicTacToeLogo.png" />
+    <Resource Include="Images\ToDoListLogo.png" />
     <Resource Include="Images\UsersLogo.png" />
     <Resource Include="Projects\BlackJack\Images\10.png" />
     <Resource Include="Projects\BlackJack\Images\2.png" />

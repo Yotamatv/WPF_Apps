@@ -18,6 +18,7 @@
             <RowDefinition Height="0.5*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Label 
@@ -44,7 +45,7 @@
             FontSize="20"
         />
 
-        <Image Source="/Images/Background.png" Stretch="UniformToFill" Grid.Column="0" Grid.Row="1"  Grid.ColumnSpan="3"  Grid.RowSpan="3"/>
+        <Image Source="/Images/Background.png" Stretch="UniformToFill" Grid.Column="0" Grid.Row="1"  Grid.ColumnSpan="3"  Grid.RowSpan="4" Margin="0,0,0,-1"/>
         <Label 
             x:Name="GameText"
             Content="please pick a game" 
@@ -57,14 +58,16 @@
         />
 
         
-        <WrapPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="DarkRed">
-            <Image x:Name="Image1" Source="/Images/UsersLogo.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image1_MouseLeftButtonUp"/>
-            <Image x:Name="Image2" Source="/Images/TicTacToeLogo.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image2_MouseLeftButtonUp"/>
-            <Image x:Name="Image3" Source="/Images/CurrencyLogo.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image3_MouseLeftButtonUp"/>
-            <Image x:Name="Image4" Source="/Images/CarGameLogo.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image4_MouseLeftButtonUp"/>
-            <Image x:Name="Image5" Source="/Images/PaintLogo.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image5_MouseLeftButtonUp"/>
-            <Image x:Name="Image6" Source="/Images/BlackjackLogo.png" Width="150" Margin="20" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonDown="Image6_MouseLeftButtonDown"/>
+        <WrapPanel Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Background="DarkRed">
+            <Image x:Name="Image1" Source="/Images/UsersLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image1_MouseLeftButtonUp"/>
+            <Image x:Name="Image2" Source="/Images/TicTacToeLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image2_MouseLeftButtonUp"/>
+            <Image x:Name="Image3" Source="/Images/CurrencyLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image3_MouseLeftButtonUp"/>
+            <Image x:Name="Image4" Source="/Images/CarGameLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image4_MouseLeftButtonUp"/>
+            <Image x:Name="Image5" Source="/Images/PaintLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image5_MouseLeftButtonUp"/>
+            <Image x:Name="Image6" Source="/Images/BlackjackLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image6_MouseLeftButtonDown"/>
+            <Image x:Name="Image7" Source="/Images/ToDoListLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image7_MouseLeftButtonUp"/>
         </WrapPanel>
+        <!--
         <Label x:Name="Footer"
                Grid.Column="0"
                Grid.Row="3"
@@ -75,6 +78,7 @@
                FontWeight="Bold"
                FontSize="23"
         />
+        -->
     </Grid>
     
 </Window>
