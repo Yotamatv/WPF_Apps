@@ -1,5 +1,6 @@
 ﻿using gameCenter.Projects;
 using gameCenter.Projects.BlackJack;
+using gameCenter.Projects.Calculator;
 using gameCenter.Projects.CarGame;
 using gameCenter.Projects.CurrencyConvertorView;
 using gameCenter.Projects.DrawingApp;
@@ -140,6 +141,22 @@ namespace gameCenter
             page.ShowDialog();
             ShowDialog();
             project.Close();
+        }
+
+        private void Image8_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            ProjectPresentation page = new();
+            Calculator project = new();
+            page.OnStartUp("bla bla bla", Image7.Source, project, "To Do List");
+            Hide();
+            page.ShowDialog();
+            ShowDialog();
+            project.Close();
+        }
+
+        private void Image9_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
