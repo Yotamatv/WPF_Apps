@@ -5,30 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gameCenter.Projects.Calculator"
         mc:Ignorable="d"
-        Title="Calculator" Height="450" Width="300">
+        ResizeMode="NoResize"
+        Title="Calculator" Height="480" Width="300">
     <Grid>
-        <TextBox x:Name="ResultTextBox" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Width="260" Height="40" FontSize="20" TextAlignment="Right" PreviewTextInput="TextBox_PreviewTextInput" TextChanged="ResultTextBox_TextChanged" />
-
-        <!-- Buttons for digits 0-9 -->
-        <Button Content="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="50" Margin="38,0,0,0" Click="Digit_Click" />
-        <Button Content="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="50" Margin="93,0,0,0" Click="Digit_Click" />
-        <Button Content="2" HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="50" Margin="148,0,0,0" Click="Digit_Click" />
-        <Button Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="38,246,0,0" Click="Digit_Click" />
-        <Button Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="93,246,0,0" Click="Digit_Click" />
-        <Button Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="148,246,0,0" Click="Digit_Click" />
-        <Button Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="203,246,0,0" Click="Digit_Click" />
-        <Button Content="7" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="38,301,0,0" Click="Digit_Click" />
-        <Button Content="8" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="93,301,0,0" Click="Digit_Click" />
-        <Button Content="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="148,301,0,0" Click="Digit_Click" />
+        <TextBox x:Name="ResultTextBox" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Width="260" Height="40" FontSize="20" TextAlignment="Right" IsReadOnly="True" />
+        <Button Content="0" HorizontalAlignment="Left" Width="50" Height="50" Margin="33,277,0,107" Click="Digit_Click" />
+        <Button Content="1" HorizontalAlignment="Left" Width="50" Height="50" Margin="33,222,0,162" Click="Digit_Click" />
+        <Button Content="2" HorizontalAlignment="Left" Width="50" Height="50" Margin="88,222,0,162" Click="Digit_Click" />
+        <Button Content="3" HorizontalAlignment="Left" Width="50" Height="50" Margin="143,222,0,162" Click="Digit_Click" />
+        <Button Content="4" HorizontalAlignment="Left" Width="50" Height="50" Margin="33,167,0,217" Click="Digit_Click" />
+        <Button Content="5" HorizontalAlignment="Left" Width="50" Height="50" Margin="88,167,0,217" Click="Digit_Click" />
+        <Button Content="6" HorizontalAlignment="Left" Width="50" Height="50" Margin="143,167,0,217" Click="Digit_Click" />
+        <Button Content="7" HorizontalAlignment="Left" Width="50" Height="50" Margin="33,112,0,272" Click="Digit_Click" />
+        <Button Content="8" HorizontalAlignment="Left" Width="50" Height="50" Margin="88,112,0,272" Click="Digit_Click" />
+        <Button Content="9" HorizontalAlignment="Left" Width="50" Height="50" Margin="143,112,0,272" Click="Digit_Click" />
 
         <!-- Buttons for operators -->
-        <Button Content="+" HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="50" Margin="203,0,0,0" Click="Operator_Click" />
-        <Button Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="203,301,0,0" Click="Operator_Click" />
-        <Button Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="38,356,0,0" Click="Operator_Click" />
-        <Button Content="/" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="93,356,0,0" Click="Operator_Click" />
+        <Button Content="+" HorizontalAlignment="Left"  Width="50" Height="50" Margin="198,277,0,107" Click="Operator_Click" />
+        <Button Content="-" HorizontalAlignment="Left" Width="50" Height="50" Margin="198,222,0,162" Click="Operator_Click" />
+        <Button Content="X" HorizontalAlignment="Left" Width="50" Height="50" Margin="198,167,0,217" Click="Operator_Click" />
+        <Button Content="÷" HorizontalAlignment="Left" Width="50" Height="50" Margin="198,112,0,272" Click="Operator_Click" />
 
         <!-- Add buttons for equals and clear -->
-        <Button Content="=" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="148,356,0,0" Click="Equals_Click" />
-        <Button Content="C" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="203,356,0,0" Click="Clear_Click" />
+        <Button Content="=" HorizontalAlignment="Left" Width="50" Height="50" Margin="143,277,0,107" Click="Equals_Click" />
+        <Button Content="C" HorizontalAlignment="Left"  Width="50" Height="50" Margin="88,277,0,107" Click="Clear_Click" />
+
+        <!-- Buttons for digits 0-9 -->
     </Grid>
 </Window>

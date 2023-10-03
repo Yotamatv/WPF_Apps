@@ -42,9 +42,12 @@ namespace gameCenter.Projects.Calculator
             // Handle operator button clicks
             if (!string.IsNullOrEmpty(currentInput))
             {
+                Equals_Click(sender, e);
                 currentNumber = double.Parse(currentInput);
                 currentInput = string.Empty;
+                //ResultTextBox.Text = string.Empty;
                 selectedOperator = ((Button)sender).Content.ToString();
+               
             }
         }
 
@@ -62,10 +65,10 @@ namespace gameCenter.Projects.Calculator
                     case "-":
                         currentNumber -= secondNumber;
                         break;
-                    case "*":
+                    case "X":
                         currentNumber *= secondNumber;
                         break;
-                    case "/":
+                    case "÷":
                         if (secondNumber != 0)
                         {
                             currentNumber /= secondNumber;
@@ -77,7 +80,8 @@ namespace gameCenter.Projects.Calculator
                         break;
                 }
                 ResultTextBox.Text = currentNumber.ToString();
-                currentInput = string.Empty;
+
+                currentInput = ResultTextBox.Text;
                 selectedOperator = string.Empty;
             }
         }
@@ -90,24 +94,6 @@ namespace gameCenter.Projects.Calculator
             selectedOperator = string.Empty;
             ResultTextBox.Text = string.Empty;
         }
-        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            // Allow only numeric input
-            if (!IsNumeric(e.Text))
-            {
-                e.Handled = true; // Do not allow non-numeric input
-            }
-        }
 
-        private bool IsNumeric(string text)
-        {
-            // Use a regular expression to check if the input is numeric
-            return Regex.IsMatch(text, "^[0-9]+$");
-        }
-
-        private void ResultTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            currentNumber = double.Parse(ResultTextBox.Text);
-        }
     }
 }
