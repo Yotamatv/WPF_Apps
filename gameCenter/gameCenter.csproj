@@ -36,6 +36,7 @@
     <None Remove="Projects\CarGame\Images\BackgroudVideo.mp4" />
     <None Remove="Projects\CarGame\Images\Bomb.png" />
     <None Remove="Projects\CarGame\Images\carImage.png" />
+    <None Remove="Projects\Notepad\Images\NoteBackground.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -68,6 +69,7 @@
     <Resource Include="Projects\BlackJack\Images\Queen.png" />
     <Resource Include="Projects\CarGame\Images\Bomb.png" />
     <Resource Include="Projects\CarGame\Images\carImage.png" />
+    <Resource Include="Projects\Notepad\Images\NoteBackground.png" />
   </ItemGroup>
 
 </Project>

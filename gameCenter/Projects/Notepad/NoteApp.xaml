@@ -1,0 +1,41 @@
+﻿<Window x:Class="gameCenter.Projects.Notepad.NoteApp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gameCenter.Projects.Notepad"
+        mc:Ignorable="d"
+        Title="NoteApp" Height="450" Width="900">
+    <Grid>
+        <ListBox Name="noteListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="200" Margin="10,10,0,0">
+    <ListBox.ItemTemplate>
+        <DataTemplate>
+            <TextBlock Text="{Binding}" TextTrimming="CharacterEllipsis" Width="150" Height="25" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" />
+        </DataTemplate>
+    </ListBox.ItemTemplate>
+</ListBox>
+        <Image Margin="532,10,28,74" Source="/Projects/Notepad/Images/NoteBackground.png" Stretch="Fill"/>
+        <TextBox Name="noteTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="309" Margin="552,25,0,0" BorderThickness="0" Background="Transparent" Padding="5"
+         SpellCheck.IsEnabled="False" KeyDown="noteTextBox_KeyDown">
+
+            <TextBox.FocusVisualStyle>
+                <Style>
+                    <Setter Property="Control.Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Rectangle Stroke="Gray" StrokeThickness="1" Margin="2" SnapsToDevicePixels="true"/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.FocusVisualStyle>
+        </TextBox>
+
+        <Button Content="Add Note" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="30" Margin="0,45,0,0" Click="AddNote_Click"/>
+        <Button Content="Delete Note" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="30" Margin="0,80,0,0" Click="DeleteNote_Click"/>
+        <Button Content="Edit Note" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="30" Margin="0,115,0,0" Click="EditNote_Click"/>
+        <Button Content="Save Note" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="30" Margin="0,150,0,0" Click="SaveNote_Click"/>
+
+
+    </Grid>
+</Window>

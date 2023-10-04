@@ -4,6 +4,7 @@ using gameCenter.Projects.Calculator;
 using gameCenter.Projects.CarGame;
 using gameCenter.Projects.CurrencyConvertorView;
 using gameCenter.Projects.DrawingApp;
+using gameCenter.Projects.Notepad;
 using gameCenter.Projects.Project1;
 using gameCenter.Projects.TicTacToe;
 using gameCenter.Projects.ToDoList;
@@ -147,7 +148,7 @@ namespace gameCenter
         {
             ProjectPresentation page = new();
             Calculator project = new();
-            page.OnStartUp("bla bla bla", Image7.Source, project, "To Do List");
+            page.OnStartUp("bla bla bla", Image8.Source, project, "Calculator");
             Hide();
             page.ShowDialog();
             ShowDialog();
@@ -156,7 +157,13 @@ namespace gameCenter
 
         private void Image9_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            ProjectPresentation page = new();
+            NoteApp project = new();
+            page.OnStartUp("bla bla bla", Image8.Source, project, "Note Taking App");
+            Hide();
+            page.ShowDialog();
+            ShowDialog();
+            project.Close();
         }
     }
 }
