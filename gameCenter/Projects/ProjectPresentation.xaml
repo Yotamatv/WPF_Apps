@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gameCenter.Projects.Project1"
+        ResizeMode="NoResize"
         mc:Ignorable="d"
         Title="Project1Presentation" Height="800" Width="1400">
     <Grid>
@@ -14,7 +15,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"></RowDefinition>
-            <RowDefinition Height="0.7*"></RowDefinition>
+            <RowDefinition Height="0.94*"></RowDefinition>
             <RowDefinition Height="1.5*"></RowDefinition>
             <RowDefinition Height="0.3*"></RowDefinition>
         </Grid.RowDefinitions>
@@ -38,16 +39,6 @@
         Grid.ColumnSpan="2"
         HorizontalAlignment="Right"
         VerticalAlignment="Stretch"
-        FontSize="20"
-    />
-
-        <Label
-        x:Name="UserLabel"
-        Grid.Column="0"
-        Grid.Row="0"
-        VerticalAlignment="Center"
-        HorizontalAlignment="Center"
-        Content="Please Log In"
         FontSize="20"
     />
 

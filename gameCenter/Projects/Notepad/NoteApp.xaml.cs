@@ -23,35 +23,40 @@ namespace gameCenter.Projects.Notepad
     /// </summary>
     public partial class NoteApp : Window
     {
-        ObservableCollection<Note> notes = new ObservableCollection<Note>();
         int index;
         private string notesFromFile = " ";
-        string str;
+        private NotesModel notesModel;
         public NoteApp()
         {
             InitializeComponent();
-
-            noteListBox.ItemsSource = notes;
+            initNotes();
         }
         private void initNotes()
         {
-            if(File.Exists("notes.txt"))
+            notesModel = new NotesModel();
+            if (File.Exists("notes.txt"))
             {
                 FileInfo fileInfo = new FileInfo("notes.txt");
-                if(fileInfo.Length > 0)
+                if (fileInfo.Length > 0)
                 {
                     notesFromFile = File.ReadAllText("notes.txt");
-                    str = JsonSerializer.Deserialize<string>(notesFromFile);
+                    notesModel = JsonSerializer.Deserialize<NotesModel>(notesFromFile);
                 }
             }
+            else
+            {
+                File.Create("notes.txt");
+            }
+            noteListBox.ItemsSource = notesModel.notes;
         }
         private void AddNote_Click(object sender, RoutedEventArgs e)
         {
             string newNote = noteTextBox.Text;
-            int index = notes.Count;
+            int index = notesModel.notes.Count;
             if (!string.IsNullOrWhiteSpace(newNote))
             {
-                notes.Add(new Note(newNote,index));
+                notesModel.notes.Add(new Note(newNote, index));
+                updateFile();
                 noteTextBox.Clear();
             }
         }
@@ -61,7 +66,8 @@ namespace gameCenter.Projects.Notepad
             int selectedIndex = noteListBox.SelectedIndex;
             if (selectedIndex >= 0)
             {
-                notes.RemoveAt(selectedIndex);
+                notesModel.notes.RemoveAt(selectedIndex);
+                updateFile();
             }
         }
         private void noteTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -86,21 +92,20 @@ namespace gameCenter.Projects.Notepad
 
         private void EditNote_Click(object sender, RoutedEventArgs e)
         {
-            noteTextBox.Text = noteListBox.SelectedItem.ToString();
+            string note = notesModel.notes[noteListBox.SelectedIndex].Text;
+            noteTextBox.Text = note;
             index = noteListBox.SelectedIndex;
-
+            updateFile();
         }
 
         private void SaveNote_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (noteTextBox.Text.Length > 0)
             {
-                notes[noteListBox.SelectedIndex] = noteTextBox.Text;
-
-            }
-            catch
-            {
-                notes[index] = noteTextBox.Text;
+                notesModel.notes[index].Text = noteTextBox.Text;
+                noteListBox.ItemsSource = null;
+                noteListBox.ItemsSource = notesModel.notes;
+                updateFile();
             }
         }
 
@@ -108,8 +113,31 @@ namespace gameCenter.Projects.Notepad
         {
             if (e.ClickCount == 2)
             {
-                EditNote_Click (sender, e);
+                EditNote_Click(sender, e);
             }
         }
+        private void updateFile()
+        {
+            notesFromFile = JsonSerializer.Serialize<NotesModel>(notesModel);
+            File.WriteAllText("notes.txt", notesFromFile);
+        }
+
+        private void SearchBox_Update(object sender, TextChangedEventArgs e)
+        {
+            if (!(String.IsNullOrEmpty(SearchBox.Text)))
+            {
+                noteListBox.ItemsSource = null;
+                noteListBox.ItemsSource = notesModel.notes.Where(note => note.Text.Contains(SearchBox.Text)).ToList();
+                PlaceHolder.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                noteListBox.ItemsSource = null;
+                noteListBox.ItemsSource = notesModel.notes;
+                PlaceHolder.Visibility = Visibility.Visible;
+            }
+        }
+
+
     }
 }

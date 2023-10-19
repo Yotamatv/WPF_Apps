@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gameCenter"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="MainWindow" Height="800" Width="1400" Closing="Window_Closing">
     <Grid>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -57,17 +58,17 @@
             Foreground="WhiteSmoke"
         />
 
-        
+
         <WrapPanel Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Background="DarkRed">
             <Image x:Name="Image1" Source="/Images/UsersLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image1_MouseLeftButtonUp"/>
-            <Image x:Name="Image2" Source="/Images/TicTacToeLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image2_MouseLeftButtonUp"/>
+            <Image x:Name="Image2" Source="/Images/TicTacToeLogo.png" Width="138" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image2_MouseLeftButtonUp" Height="138"/>
             <Image x:Name="Image3" Source="/Images/CurrencyLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image3_MouseLeftButtonUp"/>
             <Image x:Name="Image4" Source="/Images/CarGameLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image4_MouseLeftButtonUp"/>
             <Image x:Name="Image5" Source="/Images/PaintLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image5_MouseLeftButtonUp"/>
             <Image x:Name="Image6" Source="/Images/BlackjackLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image6_MouseLeftButtonDown"/>
             <Image x:Name="Image7" Source="/Images/ToDoListLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image7_MouseLeftButtonUp"/>
-            <Image x:Name="Image8" Source="/Images/ToDoListLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image8_MouseLeftButtonUp"/>
-            <Image x:Name="Image9" Source="/Images/ToDoListLogo.png" Width="150" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image9_MouseLeftButtonUp"/>
+            <Image x:Name="Image8" Source="/Images/CalculatorLogo.png" Width="185" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image8_MouseLeftButtonUp" Height="148" RenderTransformOrigin="0.843,0.534"/>
+            <Image x:Name="Image9" Source="/Images/NotepadLogo.png" Width="127" Margin="17" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonUp="Image9_MouseLeftButtonUp" Height="164"/>
         </WrapPanel>
         <!--
         <Label x:Name="Footer"
@@ -82,5 +83,5 @@
         />
         -->
     </Grid>
-    
+
 </Window>

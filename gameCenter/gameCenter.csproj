@@ -12,8 +12,10 @@
     <None Remove="Images\BackgroudVideo.mp4" />
     <None Remove="Images\Background.png" />
     <None Remove="Images\BlackjackLogo.png" />
+    <None Remove="Images\CalculatorLogo.png" />
     <None Remove="Images\CarGameLogo.png" />
     <None Remove="Images\CurrencyLogo.png" />
+    <None Remove="Images\NotepadLogo.png" />
     <None Remove="Images\PaintLogo.png" />
     <None Remove="Images\TicTacToeLogo.png" />
     <None Remove="Images\ToDoListLogo.png" />
@@ -37,6 +39,7 @@
     <None Remove="Projects\CarGame\Images\Bomb.png" />
     <None Remove="Projects\CarGame\Images\carImage.png" />
     <None Remove="Projects\Notepad\Images\NoteBackground.png" />
+    <None Remove="Projects\Notepad\Images\Search_Icon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,8 +49,10 @@
   <ItemGroup>
     <Resource Include="Images\Background.png" />
     <Resource Include="Images\BlackjackLogo.png" />
+    <Resource Include="Images\CalculatorLogo.png" />
     <Resource Include="Images\CarGameLogo.png" />
     <Resource Include="Images\CurrencyLogo.png" />
+    <Resource Include="Images\NotepadLogo.png" />
     <Resource Include="Images\PaintLogo.png" />
     <Resource Include="Images\TicTacToeLogo.png" />
     <Resource Include="Images\ToDoListLogo.png" />
@@ -70,6 +75,7 @@
     <Resource Include="Projects\CarGame\Images\Bomb.png" />
     <Resource Include="Projects\CarGame\Images\carImage.png" />
     <Resource Include="Projects\Notepad\Images\NoteBackground.png" />
+    <Resource Include="Projects\Notepad\Images\Search_Icon.png" />
   </ItemGroup>
 
 </Project>

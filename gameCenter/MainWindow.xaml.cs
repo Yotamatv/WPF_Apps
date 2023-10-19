@@ -52,6 +52,8 @@ namespace gameCenter
                 "Image5" => "Paint",
                 "Image6" => "BlackJack",
                 "Image7" => "To Do List",
+                "Image8" => "Calculator",
+                "Image9" => "Note Taking App",
                 _ => "please pick an app"
             };
         }
@@ -62,6 +64,10 @@ namespace gameCenter
             GameText.Content = "please pick a game";
         }
 
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
         private void Image1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             ProjectPresentation page = new();
@@ -77,23 +83,18 @@ namespace gameCenter
         {
             ProjectPresentation page = new();
             TicTacToe project = new();
-            page.OnStartUp("bla bla bla", Image2.Source, project,"Tic Tac Toe");
+            page.OnStartUp("This is a 2 player Tic Tac Toe experience", Image2.Source, project,"Tic Tac Toe");
             Hide();
             page.ShowDialog();
             ShowDialog();
             project.Close();
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
         private void Image3_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             ProjectPresentation page = new();
             CurrencyConvertorView project = new();
-            page.OnStartUp("bla bla bla", Image3.Source, project, "Currency Convertor");
+            page.OnStartUp("Convert all currencies swiftly and accurately using up to date API!", Image3.Source, project, "Currency Convertor");
             Hide();
             page.ShowDialog();
             ShowDialog();
@@ -104,7 +105,7 @@ namespace gameCenter
         {
             ProjectPresentation page = new();
             CarGame project = new();
-            page.OnStartUp("bla bla bla", Image4.Source, project, "Car Game");
+            page.OnStartUp("Use the car and escape the bombs, the more bombs you dodge the higher the score!", Image4.Source, project, "Car Game");
             Hide();
             page.ShowDialog();
             ShowDialog();
@@ -115,7 +116,7 @@ namespace gameCenter
         {
             ProjectPresentation page = new();
             DrawingApp project = new();
-            page.OnStartUp("bla bla bla", Image5.Source, project, "Paint");
+            page.OnStartUp("Paint App for artists, options to change brush size and color as well as erasing any mistakes", Image5.Source, project, "Paint");
             Hide();
             page.ShowDialog();
             ShowDialog();
@@ -126,7 +127,10 @@ namespace gameCenter
         {
             ProjectPresentation page = new();
             BlackjackGame project = new();
-            page.OnStartUp("bla bla bla", Image6.Source, project, "BlackJack");
+            page.OnStartUp("A Game of Blackjack: you against the dealer\nYou are dealt two cards, and can choose to \"hit\" " +
+                "to receive additional cards or \"stand\" to keep your current total. Face cards are worth 10 points, numbered cards " +
+                "are worth their face value, and aces can be worth 1 or 11 points.\nYou win if your hand is closer to 21 than the dealer's " +
+                "without exceeding 21.", Image6.Source, project, "BlackJack");
             Hide();
             page.ShowDialog();
             ShowDialog();
@@ -137,7 +141,7 @@ namespace gameCenter
         {
             ProjectPresentation page = new();
             ToDoList project = new();
-            page.OnStartUp("bla bla bla", Image7.Source, project, "To Do List");
+            page.OnStartUp("Add tasks, mark their complition and keep track in the future using local storage", Image7.Source, project, "To Do List");
             Hide();
             page.ShowDialog();
             ShowDialog();
@@ -148,7 +152,7 @@ namespace gameCenter
         {
             ProjectPresentation page = new();
             Calculator project = new();
-            page.OnStartUp("bla bla bla", Image8.Source, project, "Calculator");
+            page.OnStartUp("Simple Calculator with options to add, subtract, chaining operators and more!", Image8.Source, project, "Calculator");
             Hide();
             page.ShowDialog();
             ShowDialog();
@@ -159,7 +163,7 @@ namespace gameCenter
         {
             ProjectPresentation page = new();
             NoteApp project = new();
-            page.OnStartUp("bla bla bla", Image8.Source, project, "Note Taking App");
+            page.OnStartUp("Write, search and manage notes, all stored in local storage ", Image9.Source, project, "Note Taking App");
             Hide();
             page.ShowDialog();
             ShowDialog();

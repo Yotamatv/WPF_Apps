@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gameCenter.Projects.Notepad"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="NoteApp" Height="450" Width="900">
     <Grid>
-        <ListBox Name="noteListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="200" Margin="10,10,0,0">
-    <ListBox.ItemTemplate>
-        <DataTemplate>
-            <TextBlock Text="{Binding}" TextTrimming="CharacterEllipsis" Width="150" Height="25" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" />
-        </DataTemplate>
-    </ListBox.ItemTemplate>
-</ListBox>
+        <ListBox Name="noteListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="200" Margin="10,45,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Text}" TextTrimming="CharacterEllipsis" Width="150" Height="25" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Image Margin="532,10,28,74" Source="/Projects/Notepad/Images/NoteBackground.png" Stretch="Fill"/>
         <TextBox Name="noteTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="309" Margin="552,25,0,0" BorderThickness="0" Background="Transparent" Padding="5"
          SpellCheck.IsEnabled="False" KeyDown="noteTextBox_KeyDown">
@@ -35,6 +36,8 @@
         <Button Content="Delete Note" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="30" Margin="0,80,0,0" Click="DeleteNote_Click"/>
         <Button Content="Edit Note" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="30" Margin="0,115,0,0" Click="EditNote_Click"/>
         <Button Content="Save Note" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="30" Margin="0,150,0,0" Click="SaveNote_Click"/>
+        <TextBox Name="SearchBox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="30" TextChanged="SearchBox_Update"/>
+        <TextBlock Name="PlaceHolder" HorizontalAlignment="Left" Margin="13,12,0,0" TextWrapping="Wrap" Text="Search" Opacity="0.6" VerticalAlignment="Top" RenderTransformOrigin="0.325,0.003" Height="15" Width="36"/>
 
 
     </Grid>
