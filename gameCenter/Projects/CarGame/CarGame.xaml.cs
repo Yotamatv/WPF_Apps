@@ -29,6 +29,8 @@ namespace gameCenter.Projects.CarGame
         public CarGame()
         {
             InitializeComponent();
+            BackgroudVideo.Source = new Uri("Projects\\CarGame\\Images\\BackgroudVideo.mp4", UriKind.Relative);
+            BackgroudVideo.Play();
             playerCar = new PlayerCar(200, 300, 1, playerCarImage);
             obstacles = new List<Obstacle>();
             random = new Random();
@@ -142,6 +144,11 @@ namespace gameCenter.Projects.CarGame
 
             }
            
+        }
+        private void MediaElement_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            BackgroudVideo.Position = TimeSpan.Zero;
+            BackgroudVideo.Play();
         }
         private void GameLoop(object sender, EventArgs e)
         {

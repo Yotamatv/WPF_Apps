@@ -8,20 +8,9 @@
         mc:Ignorable="d"
         Title="CarGame" Height="450" Width="800">
     <Grid>
-        <MediaElement Name="BackgroudVideo" LoadedBehavior="Play" UnloadedBehavior="Play" IsMuted="True" Stretch="UniformToFill" Source="BackgroudVideo.mp4" >
-            <MediaElement.Triggers>
-                <EventTrigger RoutedEvent="MediaElement.Loaded">
-                    <EventTrigger.Actions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <MediaTimeline Source="BackgroudVideo.mp4"  Storyboard.TargetName="BackgroudVideo"  
-                                 RepeatBehavior="Forever" />
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger.Actions>
-                </EventTrigger>
-            </MediaElement.Triggers>
-        </MediaElement>
+        <MediaElement x:Name="BackgroudVideo" LoadedBehavior="Manual" UnloadedBehavior="Stop" IsMuted="True" Stretch="UniformToFill" MediaEnded="MediaElement_MediaEnded" />
+
+
         <Canvas x:Name="gameCanvas">
             <TextBox Name="consoleTextBox" IsReadOnly="True" VerticalScrollBarVisibility="Auto" Text="" Background="Black" Foreground="WhiteSmoke" BorderThickness="0"/>
             <Image x:Name="playerCarImage" Source="images/carImage.png" Stretch="Fill" Height="100" Width="114"/>
