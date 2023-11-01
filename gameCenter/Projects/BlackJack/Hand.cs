@@ -19,6 +19,8 @@ namespace gameCenter.Projects.BlackJack
             cards.Add(card1);
             cards.Add(card2);
         }
+
+        //calculates hand total considering Aces' differing value
         public int HandTotal()
         {
             _total = 0;

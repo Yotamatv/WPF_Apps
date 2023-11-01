@@ -14,9 +14,7 @@ using System.Windows.Shapes;
 
 namespace gameCenter.Projects.CurrencyConvertorView
 {
-    /// <summary>
-    /// Interaction logic for CurrencyConvertorView.xaml
-    /// </summary>
+  
     public partial class CurrencyConvertorView : Window
     {
         private Projects.CurrencyConvertor.Services.CurrencyService _currency_Service;
@@ -30,6 +28,7 @@ namespace gameCenter.Projects.CurrencyConvertorView
 
         private async void LoadCurrencies()
         {
+            //loads exchange rates from API
             try
             {
                 _exchangeRates = await _currency_Service.GetExchangeRateAsync();
@@ -45,6 +44,8 @@ namespace gameCenter.Projects.CurrencyConvertorView
 
         private async void OnConvertClick(object sender, RoutedEventArgs e)
         {
+            // This function is called when the "Convert" button is clicked. It performs a currency conversion
+            // based on the selected currencies and the amount entered, and displays the result.
             string fromCurrency = FromCurrencyComboBox.SelectedItem.ToString();
             string toCurrency = ToCurrencyComboBox.SelectedItem.ToString();
             double amount = double.Parse(AmountTextBox.Text);

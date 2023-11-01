@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace gameCenter.Projects.TicTacToe
 {
-    /// <summary>
-    /// Interaction logic for TicTacToe.xaml
-    /// </summary>
+    
     public partial class TicTacToe : Window
     {
         GameTicTacToe game = new GameTicTacToe();
@@ -30,6 +28,8 @@ namespace gameCenter.Projects.TicTacToe
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //updates the game board, checks for a win or draw,
+            // and switches the current player for the next move.
             Button button = (Button)sender;
             if (button != null && string.IsNullOrEmpty(button.Content as string))
             {

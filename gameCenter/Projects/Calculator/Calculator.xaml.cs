@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace gameCenter.Projects.Calculator
 {
-    /// <summary>
-    /// Interaction logic for Calculator.xaml
-    /// </summary>
+   
     public partial class Calculator : Window
     {
         private string currentInput = string.Empty;

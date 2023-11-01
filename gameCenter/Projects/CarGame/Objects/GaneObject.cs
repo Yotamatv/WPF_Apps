@@ -10,6 +10,7 @@ namespace gameCenter.Projects.CarGame.Objects
 {
     class GaneObject
     {
+        //sets general parameters for game objects
         internal abstract class GameObject
         {
             public int X { get; set; }

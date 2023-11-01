@@ -13,7 +13,7 @@ namespace gameCenter.Projects
         public ProjectPresentation()
         {
             InitializeComponent();
-
+            //adds UTC time clock
             DateLabel.Content = DateTime.UtcNow.ToString("dddd, dd MMMM yyyy HH:mm:ss");
 
             DispatcherTimer clock = new()
@@ -30,6 +30,7 @@ namespace gameCenter.Projects
 
         public void OnStartUp(string projectInfo, ImageSource imageSource, Window project, string projectName)
         {
+            //sets the texts on screen to the project information
             InfoTextBox.Text = projectInfo;
             ProjectImage.Source = imageSource;
             Project = project;
@@ -46,7 +47,6 @@ namespace gameCenter.Projects
         {
             Hide();
             Project.ShowDialog();
-            //ShowDialog();
             Project.Close();
         }
 

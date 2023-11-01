@@ -16,9 +16,7 @@ using System.Windows.Threading;
 
 namespace gameCenter.Projects.CarGame
 {
-    /// <summary>
-    /// Interaction logic for CarGame.xaml
-    /// </summary>
+   
     public partial class CarGame : Window
     {
         private PlayerCar playerCar;
@@ -29,6 +27,7 @@ namespace gameCenter.Projects.CarGame
         public CarGame()
         {
             InitializeComponent();
+            //starts video
             BackgroudVideo.Source = new Uri("Projects\\CarGame\\Images\\BackgroudVideo.mp4", UriKind.Relative);
             BackgroudVideo.Play();
             playerCar = new PlayerCar(200, 300, 1, playerCarImage);
@@ -42,6 +41,7 @@ namespace gameCenter.Projects.CarGame
         }
         protected override void OnPreviewKeyDown(KeyEventArgs e)
         {
+            //checks for car movement input start
             switch (e.Key)
             {
                 case Key.Left:
@@ -53,6 +53,7 @@ namespace gameCenter.Projects.CarGame
             }
         }
         protected override void OnPreviewKeyUp(KeyEventArgs e)
+        //checks for car movement input end
         {
             switch (e.Key)
             {
@@ -69,6 +70,7 @@ namespace gameCenter.Projects.CarGame
         }
         private void GenerateBombs()
         {
+            //randomly adds bomb objects to the canvas
             if (random.Next(30) == 1)
             {
                 bomb = new Image();
@@ -97,6 +99,7 @@ namespace gameCenter.Projects.CarGame
         }
         private void TestCollision()
         {
+            //checks for colision between car and bombs 
             double playerCarLeft = playerCar.X + 30;
             double playerCarRight = playerCar.X + 85;
             double playerCarTop = playerCar.Y;
@@ -122,6 +125,7 @@ namespace gameCenter.Projects.CarGame
         }
         private void GameOver()
         {
+            //display GAME OVER message and moves car out of the way
             consoleTextBox.Text = "Game Over";
             MessageBoxResult playAgain = MessageBox.Show($"Score:\n{obstacles.Count.ToString()}\nDo you want to play again?", "Game Over", MessageBoxButton.YesNo, MessageBoxImage.None,MessageBoxResult.No);
             switch(playAgain)
@@ -138,7 +142,7 @@ namespace gameCenter.Projects.CarGame
                 case MessageBoxResult.No:
                     obstacles.Clear();
                     gameCanvas.Children.Clear();
-                    playerCar.Y = -200;
+                    playerCar.Y = -400;
                     this.Close();
                     break;
 

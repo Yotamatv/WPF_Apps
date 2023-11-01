@@ -29,6 +29,7 @@ namespace gameCenter.Projects.ToDoList
 
         private void InitializeTasks()
         {
+
             _todolist = new ToDoListModel();
             //checks if file exists, if not creates it
             if (File.Exists("tasks.txt"))
@@ -50,6 +51,8 @@ namespace gameCenter.Projects.ToDoList
 
         private void OnTaskToggled(object sender, RoutedEventArgs e)
         {
+            // This function is called when a task's checkbox is toggled. It updates the task's completion status,
+            // serializes the updated to-do list, and writes it back to the "tasks.txt" file.
             if (sender is CheckBox checkBox && checkBox.DataContext is ToDoTask task)
             {
                 _todolist.ToggleComplete(task.Id);
@@ -75,6 +78,8 @@ namespace gameCenter.Projects.ToDoList
 
         private void OnSaveEdit(object sender, RoutedEventArgs e)
         {
+            // This function is called when the "Save" button for editing a task is clicked.
+            // It retrieves the edited description, updates the task in the to-do list, and saves the changes to the file.
             Button btnSave = sender as Button;
             StackPanel parent = btnSave.Parent as StackPanel;
             TextBox editTextBox = parent.FindName("editTaskDescription") as TextBox;
@@ -93,6 +98,8 @@ namespace gameCenter.Projects.ToDoList
 
         private void OnAddTask(object sender, RoutedEventArgs e)
         {
+            // adds a new task to the to-do list if the input is not empty,
+            // serializes the updated list, and saves it to the "tasks.txt" file.
             if (!string.IsNullOrEmpty(txtNewTask.Text))
             {
                 _todolist.AddTask(new ToDoTask(_todolist.Tasks.Count, txtNewTask.Text));

@@ -19,27 +19,22 @@ namespace gameCenter.Projects.CarGame.Objects
 
 
         }
+        // This function is used to move an object. It checks for left and right key presses,
+        // and if conditions are met, it updates the object's position (X coordinate) accordingly.
         public override void Move()
         {
             if (leftPressed && X > 0)
-
             {
                 Console.WriteLine("left");
                 X -= Speed + 5;
-
             }
 
-
-
             if (rightPressed && X < 800 - Representation.Width)
-
             {
-
                 X += Speed + 5;
-
             }
 
             Draw();
         }
+
     }
-}

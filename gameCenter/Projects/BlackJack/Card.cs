@@ -19,12 +19,6 @@ namespace gameCenter.Projects.BlackJack
             Name = name;
             Value = value;
             ImgSource = imgSource;
-
         }
-        
-
-        
-        
-
     }
 }

@@ -38,7 +38,9 @@ namespace gameCenter
         {
             DateLabel.Content = DateTime.UtcNow.ToString("dddd, dd MMMM yyyy HH:mm:ss");
         }
-
+        // This function is called when the mouse enters an Image control.
+        // It sets the opacity of the Image to 0.7 and updates the GameText Content
+        // based on the name of the Image control that triggered the event.
         private void Image_MouseEnter(object sender, MouseEventArgs e)
         {
             Image image = (sender as Image)!;
@@ -64,15 +66,19 @@ namespace gameCenter
             GameText.Content = "please pick a game";
         }
 
+        //shuts down the app on close
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Application.Current.Shutdown();
         }
+
+
+        //opens a window for each selected prpject
         private void Image1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             ProjectPresentation page = new();
             Project1 project = new();
-            page.OnStartUp("bla bla bla", Image1.Source, project,"Users Manager");
+            page.OnStartUp("User Management System designed to keep track of added users and their infornmation. Uses local storage to save added and removed users", Image1.Source, project, "Users Manager");
             Hide();
             page.ShowDialog();
             ShowDialog();
@@ -83,7 +89,7 @@ namespace gameCenter
         {
             ProjectPresentation page = new();
             TicTacToe project = new();
-            page.OnStartUp("This is a 2 player Tic Tac Toe experience", Image2.Source, project,"Tic Tac Toe");
+            page.OnStartUp("This is a 2 player Tic Tac Toe experience", Image2.Source, project, "Tic Tac Toe");
             Hide();
             page.ShowDialog();
             ShowDialog();

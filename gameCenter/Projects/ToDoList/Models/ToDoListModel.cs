@@ -23,6 +23,7 @@ namespace gameCenter.Projects.ToDoList.Models
 
         public void UpdateTask(int taskId, string newDescription)
         {
+            //updates a task's description with a new value based on its unique taskId.
             ToDoTask task = Tasks.FirstOrDefault(x => x.Id.Equals(taskId));
             if (task != null)
             {

@@ -17,6 +17,8 @@ namespace gameCenter.Projects.TicTacToe.Models
         }
         public bool CheckForWin()
         {
+            //checks for a win in a tic-tac-toe game by examining the current state of the game board.
+            // It checks rows, columns, and diagonals for matching symbols ('X' or 'O') and returns true if a win is found.
             for (int i = 0; i < 3; i++)
             {
                 if (GameBoard[i, 0] == CurrentPlayer && GameBoard[i, 1] == CurrentPlayer && GameBoard[i, 2] == CurrentPlayer)
@@ -39,6 +41,7 @@ namespace gameCenter.Projects.TicTacToe.Models
         }
         public bool IsBoardFull()
         {
+            //retun true if board is full, false if not
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)

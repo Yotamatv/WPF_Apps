@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace gameCenter.Projects.Notepad
 {
-    /// <summary>
-    /// Interaction logic for NoteApp.xaml
-    /// </summary>
     public partial class NoteApp : Window
     {
         int index;
@@ -33,6 +30,10 @@ namespace gameCenter.Projects.Notepad
         }
         private void initNotes()
         {
+            // This function initializes the notes feature. It checks if a "notes.txt" file exists,
+            // and if it does, it loads the notes from the file using JSON deserialization.
+            // If the file doesn't exist, it creates an empty "notes.txt" file.
+            // Finally, it populates the noteListBox with the notes from the notesModel.
             notesModel = new NotesModel();
             if (File.Exists("notes.txt"))
             {
@@ -51,6 +52,8 @@ namespace gameCenter.Projects.Notepad
         }
         private void AddNote_Click(object sender, RoutedEventArgs e)
         {
+            // This function is called when the "Add Note" button is clicked. It adds a new note to the notesModel,
+            // updates the file to save the new note, and clears the input field.
             string newNote = noteTextBox.Text;
             int index = notesModel.notes.Count;
             if (!string.IsNullOrWhiteSpace(newNote))
@@ -63,6 +66,8 @@ namespace gameCenter.Projects.Notepad
 
         private void DeleteNote_Click(object sender, RoutedEventArgs e)
         {
+            // Removes the selected note from the notesModel and updates the file to reflect the change.
+            
             int selectedIndex = noteListBox.SelectedIndex;
             if (selectedIndex >= 0)
             {
@@ -118,12 +123,14 @@ namespace gameCenter.Projects.Notepad
         }
         private void updateFile()
         {
+            // This function updates the "notes.txt" file by serializing the notesModel to JSON
             notesFromFile = JsonSerializer.Serialize<NotesModel>(notesModel);
             File.WriteAllText("notes.txt", notesFromFile);
         }
 
         private void SearchBox_Update(object sender, TextChangedEventArgs e)
         {
+            //filters from all notes by the searchbar's content
             if (!(String.IsNullOrEmpty(SearchBox.Text)))
             {
                 noteListBox.ItemsSource = null;

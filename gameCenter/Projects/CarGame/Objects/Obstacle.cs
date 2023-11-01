@@ -18,6 +18,7 @@ namespace gameCenter.Projects.CarGame.Objects
         }
         public override void Move()
         {
+            //moves the object according to his direction and starting location
             if (!(X < -100 || X > 800 || Y > 450))
             {
 

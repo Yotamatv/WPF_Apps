@@ -14,9 +14,7 @@ using System.Windows.Shapes;
 
 namespace gameCenter.Projects.DrawingApp
 {
-    /// <summary>
-    /// Interaction logic for DrawingApp.xaml
-    /// </summary>
+  
     public partial class DrawingApp : Window
     {
         private bool isDrawing = false;
@@ -38,6 +36,8 @@ namespace gameCenter.Projects.DrawingApp
         }
         private void Draw(object sender, MouseEventArgs e)
         {
+            // This function is called when the mouse is moved while drawing. It updates the brush size label
+            // and, if drawing is active, creates and adds Line objects to the drawingCanvas to create the drawing.
             Size.Text = "Brush Size " + penThickness.ToString();
             if (isDrawing)
             {
@@ -56,6 +56,7 @@ namespace gameCenter.Projects.DrawingApp
             }
         }
 
+        //following functions set predetermined brush parameters
         private void SelectPenTool(object sender, RoutedEventArgs e)
         {
             currentBrush = Brushes.Black;
@@ -79,16 +80,19 @@ namespace gameCenter.Projects.DrawingApp
 
         private void SelectColor(object sender, RoutedEventArgs e)
         {
+            //show color pannel
             colorPanel.Visibility = Visibility.Visible;
         }
 
         private void ClearScreen(object sender, RoutedEventArgs e)
         {
+            //clears canvas
             drawingCanvas.Children.Clear();
         }
 
         private void ChangeColor(object sender, RoutedEventArgs e)
         {
+            // changes the current brush color and collapses the pannel
             if (sender is Button button)
             {
                 string color = button.Name;
@@ -144,6 +148,7 @@ namespace gameCenter.Projects.DrawingApp
 
         private void ChangeSize(object sender, RoutedEventArgs e)
         {
+            //manualy adjust brush size
             if (sender is Button button)
             {
                 string sign=button.Content as string;

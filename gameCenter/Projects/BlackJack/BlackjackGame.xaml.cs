@@ -17,9 +17,7 @@ using System.Text.RegularExpressions;
 
 namespace gameCenter.Projects.BlackJack
 {
-    /// <summary>
-    /// Interaction logic for BlackjackGame.xaml
-    /// </summary>
+   
     public partial class BlackjackGame : Window
     {
         Hand PlayerHand;
@@ -73,6 +71,9 @@ namespace gameCenter.Projects.BlackJack
             DrawPlayerHand();
             DrawDealerHand();
         }
+        // This function checks the outcome of the game and displays messages based on the result.
+        // It compares the total value of the hands (PlayerHand and DealerHand) and updates PlayerMoney accordingly.
+        // It also handles scenarios like draws, Black Jack wins, player wins, player losses, and game over if the player runs out of money.
         private void CheckWin()
         {
             if(DealerHand.cards.Count == 1)
@@ -113,6 +114,9 @@ namespace gameCenter.Projects.BlackJack
                 ResetTable();
             }
         }
+        // This function is called when the "Hit Me" button is clicked.
+        // It adds a random card to the player's hand, displays the updated hands,
+        // and checks for a win condition if the player's hand total is greater than or equal to 21.
         private void HitMe_Click(object sender, RoutedEventArgs e)
         {
             PlayerHand.AddCard(RandomCard());
@@ -121,8 +125,8 @@ namespace gameCenter.Projects.BlackJack
             {
                 CheckWin();
             }
-
         }
+        //after the ploayer stood, the diller will take cards until hitting value 17 - 21 or busting, at the end we check who won
         private void Stand_Click(object sender, RoutedEventArgs e)
         {
             while(DealerHand.HandTotal()<17)
@@ -133,6 +137,9 @@ namespace gameCenter.Projects.BlackJack
             
             CheckWin();
         }
+
+        // These functions are responsible for drawing the player's and dealer's hands on the user interface.
+        // They clear the respective panels and then loop through the cards in the hands, creating and displaying 
         private void DrawPlayerHand()
         {
             PlayerPannel.Children.Clear();
@@ -174,6 +181,8 @@ namespace gameCenter.Projects.BlackJack
             HitMe.Visibility = Visibility.Visible;
             DisplayHands();
         }
+
+        //sets everything up to make the next bet, clears the previous one and displays cash amounts
         private void ResetTable()
         {
             BetAmount = 0;
@@ -185,6 +194,8 @@ namespace gameCenter.Projects.BlackJack
             DisplayBetInput();
         }
 
+        // This function is called when the "Submit Bet" button is clicked. It processes the bet input,
+        // updates the player's money, collapses bet overlay and initiates the game if the player has enough money to place the bet.
         private void SubmitBetButton_Click(object sender, RoutedEventArgs e)
         {
             BetAmount= double.Parse(BetAmountTxt.Text);
@@ -199,6 +210,8 @@ namespace gameCenter.Projects.BlackJack
                 InitGame();
             }
         }
+
+        //loads bet overlay
         private void DisplayBetInput()
         {
             BetLabel.Visibility = Visibility.Visible;

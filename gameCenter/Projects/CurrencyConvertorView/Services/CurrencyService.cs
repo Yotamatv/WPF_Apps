@@ -23,7 +23,7 @@ namespace gameCenter.Projects.CurrencyConvertor.Services
         {
             var config = new ConfigurationBuilder().AddUserSecrets<CurrencyService>().Build();
             string requestUrl = $"{BaseApiEndPoint}?access_key={config["apiKey"]}"; // <- Replace with your own exchangeratesapi key!
-            string response = await Http_Client.GetStringAsync(requestUrl); //Http_Client =object we made on line 14
+            string response = await Http_Client.GetStringAsync(requestUrl); //Http_Client =object we made on line 18
             JsonSerializerOptions options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true,
