@@ -35,6 +35,7 @@
             FontWeight="Bold"
             FontSize="60"
         />
+        <Button Content="My GitHub" Click="OpenLink_Click" Margin="44,22,44,23" Background="Aqua"/>
 
         <Label 
             x:Name="DateLabel"

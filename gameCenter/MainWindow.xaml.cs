@@ -13,6 +13,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
+using System.Diagnostics;
 
 namespace gameCenter
 {
@@ -174,6 +175,15 @@ namespace gameCenter
             page.ShowDialog();
             ShowDialog();
             project.Close();
+        }
+        private void OpenLink_Click(object sender, RoutedEventArgs e)
+        {
+            string url = "https://github.com/Yotamatv/"; // Link to my GitHub
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
         }
     }
 }
