@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows;
 
-namespace gameCenter.Projects.Project1.Utilities
+namespace gameCenter.Projects.UserManager.Utilities
 {
     public class Validate
     {

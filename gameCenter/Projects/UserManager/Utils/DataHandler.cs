@@ -7,12 +7,12 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using WpfApp1.Models;
 
-namespace gameCenter.Projects.Project1.Utilities
+namespace gameCenter.Projects.UserManager.Utilities
 {
     public static class DataHandler
     {
         static readonly string directory = Directory.GetParent(Environment.CurrentDirectory)!.ToString();
-        static readonly string path = directory + @"../../../Projects/Project1/Data/Users.json";
+        static readonly string path = directory + @"../../../Projects/UserManager/Data/Users.json";
         static readonly string jsonString=File.ReadAllText(path);
         public static List<User> GetUsersList()
         {

@@ -1,17 +1,17 @@
-﻿using gameCenter.Projects.Project1.Utilities;
+﻿using gameCenter.Projects.UserManager.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using WpfApp1.Models;
 
-namespace gameCenter.Projects.Project1
+namespace gameCenter.Projects.UserManager
 {
-    public partial class Project1 : Window
+    public partial class UserManager : Window
     {
         User _user;
         List<User> users = DataHandler.GetUsersList();
-        public Project1()
+        public UserManager()
         {
             InitializeComponent();
             if (users == null || users.Count == 0)

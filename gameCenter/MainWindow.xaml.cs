@@ -5,7 +5,7 @@ using gameCenter.Projects.CarGame;
 using gameCenter.Projects.CurrencyConvertorView;
 using gameCenter.Projects.DrawingApp;
 using gameCenter.Projects.Notepad;
-using gameCenter.Projects.Project1;
+using gameCenter.Projects.UserManager;
 using gameCenter.Projects.TicTacToe;
 using gameCenter.Projects.ToDoList;
 using System;
@@ -77,7 +77,7 @@ namespace gameCenter
         private void Image1_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             ProjectPresentation page = new();
-            Project1 project = new();
+            UserManager project = new();
             page.OnStartUp("User Management System designed to keep track of added users and their infornmation. Uses local storage to save added and removed users", Image1.Source, project, "Users Manager");
             Hide();
             page.ShowDialog();
