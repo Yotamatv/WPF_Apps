@@ -1,4 +1,4 @@
-﻿using gameCenter.Projects.CurrencyConvertor.Models;
+﻿using gameCenter.Projects.CurrencyConverter.Models;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 
 
-namespace gameCenter.Projects.CurrencyConvertor.Services
+namespace gameCenter.Projects.CurrencyConverter.Services
 {
     class CurrencyService
     {

@@ -12,17 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace gameCenter.Projects.CurrencyConvertorView
+namespace gameCenter.Projects.CurrencyConverterView
 {
   
-    public partial class CurrencyConvertorView : Window
+    public partial class CurrencyConverterView : Window
     {
-        private Projects.CurrencyConvertor.Services.CurrencyService _currency_Service;
+        private Projects.CurrencyConverter.Services.CurrencyService _currency_Service;
         private Dictionary<string, double> _exchangeRates;
-        public CurrencyConvertorView()
+        public CurrencyConverterView()
         {
             InitializeComponent();
-            _currency_Service = new Projects.CurrencyConvertor.Services.CurrencyService();
+            _currency_Service = new Projects.CurrencyConverter.Services.CurrencyService();
             LoadCurrencies();
         }
 

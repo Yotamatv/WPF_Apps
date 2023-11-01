@@ -2,7 +2,7 @@
 using gameCenter.Projects.BlackJack;
 using gameCenter.Projects.Calculator;
 using gameCenter.Projects.CarGame;
-using gameCenter.Projects.CurrencyConvertorView;
+using gameCenter.Projects.CurrencyConverterView;
 using gameCenter.Projects.DrawingApp;
 using gameCenter.Projects.Notepad;
 using gameCenter.Projects.UserManager;
@@ -50,7 +50,7 @@ namespace gameCenter
             {
                 "Image1" => "User Management System",
                 "Image2" => "Tic Tac Toe",
-                "Image3" => "Currency Convertor",
+                "Image3" => "Currency Converter",
                 "Image4" => "Car Game",
                 "Image5" => "Paint",
                 "Image6" => "BlackJack",
@@ -100,8 +100,8 @@ namespace gameCenter
         private void Image3_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             ProjectPresentation page = new();
-            CurrencyConvertorView project = new();
-            page.OnStartUp("Convert all currencies swiftly and accurately using up to date API!", Image3.Source, project, "Currency Convertor");
+            CurrencyConverterView project = new();
+            page.OnStartUp("Convert all currencies swiftly and accurately using up to date API!", Image3.Source, project, "Currency Converter");
             Hide();
             page.ShowDialog();
             ShowDialog();

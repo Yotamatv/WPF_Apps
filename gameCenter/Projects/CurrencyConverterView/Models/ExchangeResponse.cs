@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace gameCenter.Projects.CurrencyConvertor.Models
+namespace gameCenter.Projects.CurrencyConverter.Models
 {
     public class ExchangeResponse
     {
